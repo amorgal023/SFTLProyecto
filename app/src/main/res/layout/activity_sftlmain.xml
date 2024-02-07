@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SFTLMainActivity"
+    android:background="@color/Cyan">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llMenu"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginHorizontal="0dp"
+        android:background="@drawable/topbar_background">
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:src="@drawable/arrowleft"
+            android:layout_weight="3"
+            app:tint="@color/White" />
+        <ImageView
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:src="@drawable/logo"
+            android:layout_weight="1"
+            app:tint="@color/White" />
+        <View
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:layout_weight="3"
+            app:tint="@color/White" />
+
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llSelecionViaje"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/roundedbackground"
+        app:layout_constraintBottom_toTopOf="@id/cvBarcos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/llMenu">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="14dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lexend"
+                android:text="@string/str_origen"
+                android:textColor="@color/Black"
+
+                android:textSize="18sp" />
+
+            <AutoCompleteTextView
+                android:id="@+id/actvOrigen"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:backgroundTint="@color/CyanDark"
+                android:hint="@string/str_origen_hint"
+                android:textColor="@color/Black" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lexend"
+                android:text="@string/str_destino"
+                android:textColor="@color/Black"
+                android:textSize="18sp" />
+
+            <AutoCompleteTextView
+                android:id="@+id/actvDestino"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:backgroundTint="@color/CyanDark"
+                android:hint="@string/str_destino_hint"
+                android:textColor="@color/Black" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        android:layout_marginHorizontal="20dp"
+        android:id="@+id/cvBarcos"
+        app:layout_constraintTop_toBottomOf="@id/llSelecionViaje"
+        app:layout_constraintBottom_toTopOf="@id/llDecoracion">
+        <ImageView
+            android:id="@+id/ivBarcos"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            android:background="@drawable/facinasjet"
+            >
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lexend"
+            android:text="@string/str_noticia"
+            android:textColor="@color/White"
+            android:textSize="25sp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="140dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lexend"
+            android:text="@string/str_noticia_sub"
+            android:textColor="@color/White"
+            android:textSize="15sp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="170dp"/>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llDecoracion"
+        android:layout_width="match_parent"
+        android:padding="10dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_height="90dp"
+        android:orientation="horizontal"
+        android:background="@drawable/roundedbackground"
+        app:layout_constraintTop_toBottomOf="@id/cvBarcos"
+        app:layout_constraintBottom_toTopOf="@id/butContinuar">
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:src="@drawable/pet">
+            </ImageView>
+            <TextView
+                android:fontFamily="@font/lexend"
+                android:textAlignment="center"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textSize="12sp"
+                android:textColor="@color/CyanDark"
+                android:text="@string/str_deco_mascotas"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:src="@drawable/barco">
+            </ImageView>
+            <TextView
+                android:fontFamily="@font/lexend"
+                android:textAlignment="center"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textSize="12sp"
+                android:textColor="@color/CyanDark"
+                android:text="@string/str_deco_barco"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:src="@drawable/world">
+            </ImageView>
+            <TextView
+                android:fontFamily="@font/lexend"
+                android:textAlignment="center"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textSize="12sp"
+                android:textColor="@color/CyanDark"
+
+                android:text="@string/str_deco_mundo"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/butContinuar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/DarkOrange"
+        android:text="@string/str_iniciarCompra"
+        android:fontFamily="@font/lexend"
+        android:textColor="@color/White"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="horizontal"
+        android:gravity="center">
+    </androidx.appcompat.widget.AppCompatButton>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

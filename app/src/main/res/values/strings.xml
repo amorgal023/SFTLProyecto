@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">SFTL</string>
+    <string name="str_iniciarCompra">Iniciar Compra</string>
+    <string name="str_origen">Origen:</string>
+    <string name="str_destino">Destino:</string>
+    <string name="str_origen_hint">Elige un origen.</string>
+    <string name="str_destino_hint">Elige un destino.</string>
+    <string-array name="valores_barcos">
+        <item>Facinas Jet</item>
+        <item>Tahivilla Jet</item>
+        <item>Hueloterra Express</item>
+        <item>Norte Express</item>
+    </string-array>
+    <string-array name="valores_zonas">
+        <item>Tarifa</item>
+        <item>Algeciras</item>
+        <item>Ceuta</item>
+        <item>Tanger</item>
+    </string-array>
+    <string name="str_noticia">La mejor forma de viajar.</string>
+    <string name="str_noticia_sub">Descubre todas nuestras ofertas y precios disponibles.</string>
+    <string name="str_deco_mascotas">Mascotas contigo siempre.</string>
+    <string name="str_deco_barco">Expandimos nuestra flota.</string>
+    <string name="str_deco_mundo">Somos ecosostenibles.</string>
+
+</resources>
