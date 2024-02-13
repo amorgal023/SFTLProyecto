@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DatosActivity"
+    android:background="@color/Cyan">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llMenu"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginHorizontal="0dp"
+        android:background="@drawable/topbar_background">
+        <ImageButton
+            android:id="@+id/butIbBack"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:background="@drawable/arrowleft"
+            android:backgroundTint="@color/White"
+            android:layout_weight="3"
+            app:tint="@color/White" />
+        <ImageView
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:src="@drawable/logo"
+            android:layout_weight="1"
+            app:tint="@color/White" />
+        <View
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:layout_weight="3"
+            app:tint="@color/White" />
+
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llSelecionViaje"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/roundedbackground"
+        app:layout_constraintBottom_toTopOf="@id/butSeguirCompra"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/llMenu">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="14dp"
+            android:orientation="vertical">
+            <TextView
+                android:paddingTop="5dp"
+                android:paddingBottom="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lexend"
+                android:textAlignment="center"
+                android:text="@string/str_cabeceraCompletarCompra"
+                android:textColor="@color/CyanDark"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lexend"
+                android:text="@string/str_origen"
+                android:textColor="@color/Black"
+
+                android:textSize="18sp" />
+
+            <AutoCompleteTextView
+                android:id="@+id/actvOrigen"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:backgroundTint="@color/CyanDark"
+                android:hint="@string/str_origen_hint"
+                android:textColor="@color/Black" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lexend"
+                android:text="@string/str_destino"
+                android:textColor="@color/Black"
+                android:textSize="18sp" />
+
+            <AutoCompleteTextView
+                android:id="@+id/actvDestino"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:backgroundTint="@color/CyanDark"
+                android:hint="@string/str_destino_hint"
+                android:textColor="@color/Black" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/butSeguirCompra"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/DarkOrange"
+        android:text="@string/str_continuarCompra"
+        android:fontFamily="@font/lexend"
+        android:textColor="@color/White"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="horizontal"
+        android:gravity="center">
+    </androidx.appcompat.widget.AppCompatButton>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

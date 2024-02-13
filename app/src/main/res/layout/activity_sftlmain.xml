@@ -17,83 +17,60 @@
         android:layout_marginHorizontal="0dp"
         android:background="@drawable/topbar_background">
         <ImageView
-            android:id="@+id/ivBack"
             android:layout_height="match_parent"
-            android:layout_width="match_parent"
-            android:layout_margin="10dp"
-            android:src="@drawable/arrowleft"
-            android:layout_weight="3"
-            app:tint="@color/White" />
-        <ImageView
-            android:layout_height="match_parent"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_margin="10dp"
             android:src="@drawable/logo"
-            android:layout_weight="1"
             app:tint="@color/White" />
-        <View
-            android:layout_height="match_parent"
-            android:layout_width="match_parent"
-            android:layout_margin="10dp"
-            android:layout_weight="3"
-            app:tint="@color/White" />
-
-
-
     </androidx.appcompat.widget.LinearLayoutCompat>
-
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/llSelecionViaje"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:background="@drawable/roundedbackground"
+        app:layout_constraintTop_toBottomOf="@id/llMenu"
         app:layout_constraintBottom_toTopOf="@id/cvBarcos"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/llMenu">
-
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/roundedbackground">
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
             android:layout_marginVertical="14dp"
             android:orientation="vertical">
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/lexend"
-                android:text="@string/str_origen"
                 android:textColor="@color/Black"
+                android:text="@string/str_origen"
+                android:fontFamily="@font/lexend"
 
-                android:textSize="18sp" />
-
+                android:textSize="18sp"/>
             <AutoCompleteTextView
+                android:backgroundTint="@color/CyanDark"
                 android:id="@+id/actvOrigen"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:backgroundTint="@color/CyanDark"
-                android:hint="@string/str_origen_hint"
-                android:textColor="@color/Black" />
-
+                android:textColor="@color/Black"
+                android:hint="@string/str_origen_hint"/>
             <TextView
+                android:textColor="@color/Black"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/lexend"
                 android:text="@string/str_destino"
-                android:textColor="@color/Black"
-                android:textSize="18sp" />
-
+                android:fontFamily="@font/lexend"
+                android:textSize="18sp"/>
             <AutoCompleteTextView
+                android:backgroundTint="@color/CyanDark"
+                android:textColor="@color/Black"
                 android:id="@+id/actvDestino"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:backgroundTint="@color/CyanDark"
-                android:hint="@string/str_destino_hint"
-                android:textColor="@color/Black" />
+                android:hint="@string/str_destino_hint"/>
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.appcompat.widget.LinearLayoutCompat>
+
+
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -146,6 +123,7 @@
         app:layout_constraintTop_toBottomOf="@id/cvBarcos"
         app:layout_constraintBottom_toTopOf="@id/butContinuar">
         <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llMascotas"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -186,6 +164,7 @@
                 android:text="@string/str_deco_barco"/>
         </androidx.appcompat.widget.LinearLayoutCompat>
         <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llEcosostenible"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -214,7 +193,7 @@
         android:id="@+id/butContinuar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/DarkOrange"
+        android:background="@color/Black"
         android:text="@string/str_iniciarCompra"
         android:fontFamily="@font/lexend"
         android:textColor="@color/White"

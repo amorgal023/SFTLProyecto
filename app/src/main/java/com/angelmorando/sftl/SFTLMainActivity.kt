@@ -1,10 +1,14 @@
 package com.angelmorando.sftl
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
+import androidx.appcompat.widget.LinearLayoutCompat
 import androidx.core.widget.addTextChangedListener
 
 class SFTLMainActivity : AppCompatActivity() {
@@ -13,8 +17,13 @@ class SFTLMainActivity : AppCompatActivity() {
     private lateinit var butContinuar:AppCompatButton
     private lateinit var actvOrigen:AutoCompleteTextView
     private lateinit var actvDestino:AutoCompleteTextView
+    private lateinit var llMascotas:LinearLayoutCompat
+    private lateinit var llEcosostenible:LinearLayoutCompat
+
 
     private var botonDisponible : Boolean = false
+    private lateinit var origenEnum : Ciudad;
+    private lateinit var destinoEnum : Ciudad;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +38,8 @@ class SFTLMainActivity : AppCompatActivity() {
         butContinuar = findViewById<AppCompatButton>(R.id.butContinuar)
         actvOrigen = findViewById<AutoCompleteTextView>(R.id.actvOrigen)
         actvDestino = findViewById<AutoCompleteTextView>(R.id.actvDestino)
+        llMascotas = findViewById<LinearLayoutCompat>(R.id.llMascotas)
+        llEcosostenible = findViewById<LinearLayoutCompat>(R.id.llEcosostenible)
 
     }
 
@@ -48,11 +59,34 @@ class SFTLMainActivity : AppCompatActivity() {
         }
         butContinuar.setOnClickListener {
             if (botonDisponible){
-
+                val intent = Intent(this, DatosActivity::class.java)
+                intent.putExtra("ORIGEN",origenEnum)
+                intent.putExtra("DESTINO",destinoEnum)
+                startActivity(intent)
             } else {
-
+                mostrarError()
             }
         }
+
+        llMascotas.setOnClickListener {
+            val intent = Intent(this, WebViewActivity::class.java)
+            startActivity(intent)
+        }
+
+        llEcosostenible.setOnClickListener {
+            val intent = Intent(this, VideoWebActivity::class.java)
+            startActivity(intent)
+        }
+    }
+
+    private fun mostrarError(){
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Error")
+        builder.setMessage("El origen o destino no son correctos. Compruebe y pruebe de nuevo.")
+        builder.setPositiveButton("Aceptar"){ dialog, id ->
+        }
+        val dialog = builder.create()
+        dialog.show()
     }
 
     private fun comprobarDisponibilidadBoton(){
@@ -67,8 +101,6 @@ class SFTLMainActivity : AppCompatActivity() {
     private fun comprobacionOrigenDestino(): Boolean {
         var textoOrigen = actvOrigen.text.toString()
         var textoDestino = actvDestino.text.toString()
-        var origenEnum = Ciudad.NO_VALIDO
-        var destinoEnum = Ciudad.NO_VALIDO
         var origenValido = false;
         var destinoValido = false;
 
