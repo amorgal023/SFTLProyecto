@@ -50,7 +50,7 @@ class SFTLMainActivity : AppCompatActivity() {
             if (botonDisponible){
 
             } else {
-                
+
             }
         }
     }
