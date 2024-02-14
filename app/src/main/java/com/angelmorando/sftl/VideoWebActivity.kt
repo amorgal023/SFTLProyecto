@@ -1,17 +1,15 @@
 package com.angelmorando.sftl
 
-import android.os.Build
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.webkit.CookieManager
-import android.webkit.WebSettings
-import android.webkit.WebView
-import android.webkit.WebViewClient
 import android.widget.ImageButton
+import android.widget.MediaController
+import android.widget.VideoView
 
 class VideoWebActivity : AppCompatActivity() {
     private lateinit var butIbBack: ImageButton
-    private lateinit var wvPagina: WebView
+    private lateinit var vwVideo: VideoView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,34 +21,32 @@ class VideoWebActivity : AppCompatActivity() {
 
     private fun initButtons(){
         butIbBack = findViewById<ImageButton>(R.id.butIbBack)
-        wvPagina = findViewById<WebView>(R.id.wvPagina)
+        vwVideo = findViewById<VideoView>(R.id.vwVideo)
     }
 
     private fun initFunctions(){
 
-        controladorWebView()
+        controladorVideoWeb()
 
         butIbBack.setOnClickListener {
             finish()
         }
     }
 
-    private fun controladorWebView(){
-        //Para que el navegador se abra dentro de la aplicacion
-        wvPagina.webViewClient = WebViewClient()
-        //Para que funcione de manera correcta https y javascript en el WebView
-        wvPagina.settings.javaScriptEnabled = true
-        wvPagina.settings.domStorageEnabled = true
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-            wvPagina.settings.mediaPlaybackRequiresUserGesture = false
-        }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            wvPagina.settings.mixedContentMode = WebSettings.MIXED_CONTENT_ALWAYS_ALLOW
-            CookieManager.getInstance().setAcceptThirdPartyCookies(wvPagina, true)
-        }
+    private fun controladorVideoWeb(){
+        // Establece la ruta del video. Puede ser una URL o una ruta local.
+        val videoPath = "android.resource://" + packageName + "/" + R.raw.video
+        val uri = Uri.parse(videoPath)
 
+        vwVideo.setVideoURI(uri)
 
-        wvPagina.loadUrl("https://www.perreradelosbarrios.com/")
+        // Configura el MediaController y lo asocia con el VideoView.
+        val mediaController = MediaController(this)
+        mediaController.setAnchorView(vwVideo)
+        vwVideo.setMediaController(mediaController)
+
+        // Inicia el video
+        vwVideo.start()
     }
 
 
