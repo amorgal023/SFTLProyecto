@@ -43,16 +43,19 @@
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
+
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/llSelecionViaje"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:background="@drawable/roundedbackground"
+        android:paddingHorizontal="20dp"
+        android:paddingBottom="5dp"
+        app:layout_constraintTop_toBottomOf="@id/llMenu"
         app:layout_constraintBottom_toTopOf="@id/butSeguirCompra"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/llMenu">
+        app:layout_constraintStart_toStartOf="parent">
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
@@ -60,52 +63,209 @@
             android:layout_marginHorizontal="20dp"
             android:layout_marginVertical="14dp"
             android:orientation="vertical">
+
             <TextView
-                android:paddingTop="5dp"
-                android:paddingBottom="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/lexend"
-                android:textAlignment="center"
+                android:paddingTop="5dp"
+                android:paddingBottom="7dp"
                 android:text="@string/str_cabeceraCompletarCompra"
+                android:textAlignment="center"
                 android:textColor="@color/CyanDark"
                 android:textSize="20sp" />
 
-            <TextView
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="5dp"
+                android:background="@color/CyanDark" />
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/lexend"
-                android:text="@string/str_origen"
-                android:textColor="@color/Black"
+                android:layout_marginVertical="5dp"
+                android:orientation="horizontal">
 
-                android:textSize="18sp" />
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lexend"
+                    android:text="@string/str_datos_personas"
+                    android:textColor="@color/Black"
+                    android:textSize="18sp" />
 
-            <AutoCompleteTextView
-                android:id="@+id/actvOrigen"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:backgroundTint="@color/CyanDark"
-                android:hint="@string/str_origen_hint"
-                android:textColor="@color/Black" />
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="end"
+                    android:orientation="horizontal">
 
-            <TextView
+                    <ImageButton
+                        android:id="@+id/ibutMenos"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:background="@drawable/minus"
+                        android:backgroundTint="@color/CyanDark"
+                        android:scaleType="center"
+                        app:tint="@color/CyanDark" />
+
+                    <TextView
+                        android:id="@+id/tvNumPersonas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/lexend"
+                        android:paddingHorizontal="10dp"
+                        android:text="@string/str_datos_numpersonas"
+                        android:textColor="@color/Black"
+                        android:textSize="18sp" />
+
+                    <ImageButton
+                        android:id="@+id/ibutPlus"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:background="@drawable/plus"
+                        android:backgroundTint="@color/CyanDark"
+                        android:scaleType="center"
+                        app:tint="@color/CyanDark" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/lexend"
-                android:text="@string/str_destino"
-                android:textColor="@color/Black"
-                android:textSize="18sp" />
 
-            <AutoCompleteTextView
-                android:id="@+id/actvDestino"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lexend"
+                    android:text="@string/str_datos_fecha"
+                    android:textColor="@color/Black"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <CalendarView
+                android:id="@+id/calendarView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:theme="@style/CalenderViewCustom" />
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:backgroundTint="@color/CyanDark"
-                android:hint="@string/str_destino_hint"
-                android:textColor="@color/Black" />
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/lexend"
+                    android:text="@string/str_datos_coche"
+                    android:textColor="@color/Black"
+                    android:textSize="18sp" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="end"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/swCoche"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:paddingEnd="10dp"
+                        android:text="Switch"
+                        app:thumbTint="@color/CyanDark" />
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lexend"
+                    android:text="@string/str_datos_acomp"
+                    android:textColor="@color/Black"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingVertical="0dp"
+                    android:paddingStart="30dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/lexend"
+                        android:text="@string/str_datos_nenes"
+                        android:textColor="@color/Black"
+                        android:textSize="18sp" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="end"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatRadioButton
+                            android:id="@+id/rbNenes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:buttonTint="@color/CyanDark" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingVertical="0dp"
+                    android:paddingStart="30dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/lexend"
+                        android:text="@string/str_datos_animales"
+                        android:textColor="@color/Black"
+                        android:textSize="18sp" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="end"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatRadioButton
+                            android:id="@+id/rbAnimales"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:buttonTint="@color/CyanDark" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </LinearLayout>
+            </RadioGroup>
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.appcompat.widget.LinearLayoutCompat>
-
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/butSeguirCompra"

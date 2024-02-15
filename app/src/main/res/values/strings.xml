@@ -24,5 +24,15 @@
     <string name="str_deco_mascotas">Mascotas contigo siempre.</string>
     <string name="str_deco_barco">Expandimos nuestra flota.</string>
     <string name="str_deco_mundo">Somos ecosostenibles.</string>
+    <string name="str_datos_personas">Personas</string>
+    <string name="str_datos_numpersonas">1</string>
+    <string name="str_datos_fecha">Fecha</string>
+    <string name="str_datos_coche">Coche</string>
+    <string name="str_datos_acomp">Acompañantes</string>
+    <string name="str_datos_nenes">Niños</string>
+    <string name="str_datos_animales">Animales</string>
+    <string name="str_datos_precio">Precio: </string>
+
+
 
 </resources>

@@ -6,4 +6,9 @@
         <item name="android:textViewStyle">@font/lexend</item>
         <item name="android:buttonStyle">@font/lexend</item>
     </style>
+
+    <style name="CalenderViewCustom" parent="Theme.AppCompat.DayNight">
+        <item name="colorAccent">@color/CyanDark</item>
+        <item name="colorPrimary">@color/Cyan</item>
+    </style>
 </resources>

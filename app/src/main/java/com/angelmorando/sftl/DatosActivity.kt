@@ -1,6 +1,7 @@
 package com.angelmorando.sftl
 
 import android.os.Bundle
+import android.widget.CalendarView
 import android.widget.ImageButton
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -9,7 +10,7 @@ import androidx.appcompat.widget.AppCompatButton
 class DatosActivity : AppCompatActivity() {
     private lateinit var butSeguirCompra:AppCompatButton
     private lateinit var butIbBack:ImageButton
-
+    private lateinit var calendarView:CalendarView
 
     private var botonDisponible : Boolean = false
 
@@ -25,6 +26,7 @@ class DatosActivity : AppCompatActivity() {
     private fun initButtons(){
         butSeguirCompra = findViewById<AppCompatButton>(R.id.butSeguirCompra)
         butIbBack = findViewById<ImageButton>(R.id.butIbBack)
+        calendarView = findViewById<CalendarView>(R.id.calendarView)
     }
 
     private fun initVariables(){
