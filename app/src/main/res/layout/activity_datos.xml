@@ -203,6 +203,7 @@
             </LinearLayout>
 
             <RadioGroup
+                android:id="@+id/rgAcompanantes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -271,7 +272,7 @@
         android:id="@+id/butSeguirCompra"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/DarkOrange"
+        android:background="@color/Black"
         android:text="@string/str_continuarCompra"
         android:fontFamily="@font/lexend"
         android:textColor="@color/White"

@@ -7,6 +7,11 @@
     <string name="str_origen_hint">Elige un origen.</string>
     <string name="str_destino_hint">Elige un destino.</string>
     <string name="str_cabeceraCompletarCompra">Completa tu compra</string>
+    <string name="str_iniciarSesion">Iniciar Sesion</string>
+    <string name="str_iniciandoSesion">Conectando al panel de control.</string>
+    <string name="str_paneldeusuario">Panel de usuario</string>
+    <string name="str_email">Email:</string>
+    <string name="str_password">Contraseña:</string>
     <string-array name="valores_barcos">
         <item>Facinas Jet</item>
         <item>Tahivilla Jet</item>
@@ -32,7 +37,6 @@
     <string name="str_datos_nenes">Niños</string>
     <string name="str_datos_animales">Animales</string>
     <string name="str_datos_precio">Precio: </string>
-
 
 
 </resources>

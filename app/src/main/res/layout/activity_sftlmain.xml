@@ -16,12 +16,30 @@
         android:gravity="center"
         android:layout_marginHorizontal="0dp"
         android:background="@drawable/topbar_background">
+        <View
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:layout_weight="3"
+            app:tint="@color/White" />
         <ImageView
             android:layout_height="match_parent"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_margin="10dp"
             android:src="@drawable/logo"
+            android:layout_weight="1"
             app:tint="@color/White" />
+        <ImageButton
+            android:id="@+id/ibIniciarSesion"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:padding="0dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/singin"
+            android:scaleType="centerInside"
+            android:layout_weight="3"
+            app:tint="@color/White"
+            android:backgroundTint="@color/Cyan"/>
     </androidx.appcompat.widget.LinearLayoutCompat>
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/llSelecionViaje"

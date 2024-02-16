@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
+import android.widget.ImageButton
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
@@ -14,11 +15,16 @@ import androidx.core.widget.addTextChangedListener
 class SFTLMainActivity : AppCompatActivity() {
     private lateinit var ciudades_array:Array<String>
     private lateinit var adaptadorPaises:ArrayAdapter<String>
+
     private lateinit var butContinuar:AppCompatButton
+
     private lateinit var actvOrigen:AutoCompleteTextView
     private lateinit var actvDestino:AutoCompleteTextView
+
     private lateinit var llMascotas:LinearLayoutCompat
     private lateinit var llEcosostenible:LinearLayoutCompat
+
+    private lateinit var ibIniciarSesion:ImageButton
 
 
     private var botonDisponible : Boolean = false
@@ -40,6 +46,7 @@ class SFTLMainActivity : AppCompatActivity() {
         actvDestino = findViewById<AutoCompleteTextView>(R.id.actvDestino)
         llMascotas = findViewById<LinearLayoutCompat>(R.id.llMascotas)
         llEcosostenible = findViewById<LinearLayoutCompat>(R.id.llEcosostenible)
+        ibIniciarSesion = findViewById<ImageButton>(R.id.ibIniciarSesion)
 
     }
 
@@ -64,7 +71,7 @@ class SFTLMainActivity : AppCompatActivity() {
                 intent.putExtra("DESTINO",destinoEnum)
                 startActivity(intent)
             } else {
-                mostrarError()
+                mostrarError(Constantes.TITULO_ERROR, Constantes.MENSAJE_ERROR_ORIGENDEST, Constantes.ACEPTAR_ERROR)
             }
         }
 
@@ -77,13 +84,18 @@ class SFTLMainActivity : AppCompatActivity() {
             val intent = Intent(this, VideoWebActivity::class.java)
             startActivity(intent)
         }
+
+        ibIniciarSesion.setOnClickListener {
+            val intent = Intent(this, LogInActivity::class.java)
+            startActivity(intent)
+        }
     }
 
-    private fun mostrarError(){
+    private fun mostrarError(titulo:String, mensaje:String, positiveButton:String){
         val builder = AlertDialog.Builder(this)
-        builder.setTitle("Error")
-        builder.setMessage("El origen o destino no son correctos. Compruebe y pruebe de nuevo.")
-        builder.setPositiveButton("Aceptar"){ dialog, id ->
+        builder.setTitle(titulo)
+        builder.setMessage(mensaje)
+        builder.setPositiveButton(positiveButton){ dialog, id ->
         }
         val dialog = builder.create()
         dialog.show()
