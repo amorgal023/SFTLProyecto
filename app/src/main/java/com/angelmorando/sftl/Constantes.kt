@@ -29,6 +29,11 @@ class Constantes {
         val MENSAJE_ERROR_CORREO = "El correo electronico no puede estar en blanco.";
         val MENSAJE_ERROR_PASSWORD = "La contraseña no puede estar en blanco.";
         val MENSAJE_ERROR_AMBOS = "El correo electronico y la contraseña no puede estar en blanco.";
+        val MENSAJE_ERROR_TERMINOS = "Debes leer y aceptar los terminos y condiciones de compras para los clientes de SFLT.";
+        val MENSAJE_ERROR_CAMPOS = "No pueden haber campos vacios.";
+        val MENSAJE_ERROR_NUMPERSONAS = "Haz llegado al numero maximo de personas que agregar";
+        val MENSAJE_ERROR_TERMINAR = "Debes completar el total de numeros de personas.";
+
 
 
 

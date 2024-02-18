@@ -15,6 +15,15 @@
         android:theme="@style/Theme.SFTL"
         tools:targetApi="31">
         <activity
+            android:name=".ExtrasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ResumenActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DatosPersonalesActivity"
+            android:exported="false" />
+        <activity
             android:name=".ServiciosPremiumActivity"
             android:exported="false" />
         <activity
@@ -31,6 +40,9 @@
             android:exported="false" />
         <activity
             android:name=".DatosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PasarelaActivity"
             android:exported="false" />
         <activity
             android:name=".SFTLMainActivity"

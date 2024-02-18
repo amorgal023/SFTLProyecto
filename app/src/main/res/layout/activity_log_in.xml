@@ -111,7 +111,24 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/Orange"
                 android:inputType="textPassword"
+                android:layout_marginBottom="20dp"
                 android:textColor="@color/Black"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lexend"
+                    android:text="@string/str_basedatos"
+                    android:textColor="@color/CyanDark"
+                    android:textSize="18sp" />
+                <AutoCompleteTextView
+                    android:id="@+id/actvBaseDeDatos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/Orange"
+                    android:inputType="textPassword"
+                    android:completionThreshold="1"
+                    android:entries="@string/str_basedatosdir"
+                    android:textColor="@color/Black"/>
             </androidx.appcompat.widget.LinearLayoutCompat>
 
         </androidx.appcompat.widget.LinearLayoutCompat>

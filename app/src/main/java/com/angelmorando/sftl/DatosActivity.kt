@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.CalendarView
 import android.widget.ImageButton
+import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
@@ -27,11 +28,11 @@ class DatosActivity : AppCompatActivity() {
     private lateinit var swCoche: SwitchCompat
 
     private lateinit var rgAcompanantes: RadioGroup
-    private lateinit var rbNenes : AppCompatRadioButton
-    private lateinit var rbAnimales : AppCompatRadioButton
+    private lateinit var rbNenes : RadioButton
+    private lateinit var rbAnimales : RadioButton
 
 
-    private var botonDisponible : Boolean = false
+    private var botonDisponible : Boolean = true
     private var llevaCoche : Boolean = false
     private var llevaNenes : Boolean = false
     private var llevaAnimales : Boolean = false
@@ -67,8 +68,8 @@ class DatosActivity : AppCompatActivity() {
         swCoche = findViewById<SwitchCompat>(R.id.swCoche)
 
         rgAcompanantes = findViewById<RadioGroup>(R.id.rgAcompanantes)
-        rbNenes = findViewById<AppCompatRadioButton>(R.id.rbNenes)
-        rbAnimales = findViewById<AppCompatRadioButton>(R.id.rbAnimales)
+        rbNenes = findViewById<RadioButton>(R.id.rbNenes)
+        rbAnimales = findViewById<RadioButton>(R.id.rbAnimales)
     }
 
     private fun initVariables(){
@@ -154,18 +155,15 @@ class DatosActivity : AppCompatActivity() {
     }
 
     private fun controladorRadioGroup() {
-        rgAcompanantes.setOnCheckedChangeListener { group, checkedId ->
-            when(checkedId) {
-                R.id.rbNenes -> {
-                    llevaNenes = true
-                }
-                R.id.rbAnimales -> {
-                    llevaAnimales = true
-                }
-                }
-            }
+        rbAnimales.setOnCheckedChangeListener { buttonView, isChecked ->
+            llevaAnimales = isChecked
+        }
+
+        rbNenes.setOnCheckedChangeListener { buttonView, isChecked ->
+            llevaNenes = isChecked
         }
 
 
+    }
 
 }

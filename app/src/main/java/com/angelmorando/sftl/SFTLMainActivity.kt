@@ -1,8 +1,10 @@
 package com.angelmorando.sftl
 
+import android.animation.ObjectAnimator
+import android.animation.ValueAnimator
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
+import android.view.animation.AccelerateDecelerateInterpolator
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.ImageButton
@@ -10,6 +12,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.LinearLayoutCompat
+import androidx.core.content.ContextCompat
 import androidx.core.widget.addTextChangedListener
 
 class SFTLMainActivity : AppCompatActivity() {
@@ -91,6 +94,27 @@ class SFTLMainActivity : AppCompatActivity() {
         }
     }
 
+    private fun animarBoton(){
+        var colorOrange = ContextCompat.getColor(this, R.color.Orange)
+        var colorDarkOrange = ContextCompat.getColor(this, R.color.DarkOrange)
+
+        var animator = ObjectAnimator.ofArgb(
+            butContinuar,
+            "backgroundColor",
+            colorOrange,
+            colorDarkOrange
+        )
+
+        animator.duration = 1000
+        animator.repeatCount = ValueAnimator.INFINITE // Repetir infinitamente las veces del repeatcount
+        animator.repeatMode = ValueAnimator.REVERSE // Invierte la animación en cada repetición.
+
+        // No se que hace pero tiene un nombre gracioso.
+        animator.interpolator = AccelerateDecelerateInterpolator()
+
+        animator.start() // Iniciar la animación
+    }
+
     private fun mostrarError(titulo:String, mensaje:String, positiveButton:String){
         val builder = AlertDialog.Builder(this)
         builder.setTitle(titulo)
@@ -104,7 +128,7 @@ class SFTLMainActivity : AppCompatActivity() {
     private fun comprobarDisponibilidadBoton(){
         botonDisponible = comprobacionOrigenDestino();
         if (botonDisponible){
-            butContinuar.setBackgroundColor(getColor(R.color.Orange))
+            animarBoton()
         } else {
             butContinuar.setBackgroundColor(getColor(R.color.Black))
         }

@@ -2,6 +2,7 @@
     <string name="app_name">SFTL</string>
     <string name="str_iniciarCompra">Iniciar Compra</string>
     <string name="str_continuarCompra">Continuar Compra</string>
+    <string name="str_terminaCompra">Terminar Compra</string>
     <string name="str_origen">Origen:</string>
     <string name="str_destino">Destino:</string>
     <string name="str_origen_hint">Elige un origen.</string>
@@ -9,11 +10,22 @@
     <string name="str_cabeceraCompletarCompra">Completa tu compra</string>
     <string name="str_iniciarSesion">Iniciar Sesion</string>
     <string name="str_iniciandoSesion">Conectando al panel de control.</string>
-    <string name="str_pasarelaPago">Enviando información a la pasarela de pago.</string>
+    <string name="str_pasabrelaPago">Enviando información a la pasarela de pago.</string>
     <string name="str_paneldeusuario">Panel de usuario</string>
     <string name="str_serviciospremium">Servicios premiums</string>
     <string name="str_email">Email:</string>
     <string name="str_password">Contraseña:</string>
+    <string name="str_basedatos">Base de datos (Opcional):</string>
+    <string name="str_basedatosdir">bd01.sftl.com</string>
+    <string name="str_resumen">Resumen de compra</string>
+    <string name="str_pasarelaPago">Ir a la pasarela de pago</string>
+    <string name="str_resumen_nombre">A nombre de:</string>
+    <string name="str_resumen_email">Email de contacto:</string>
+    <string name="str_resumen_fecha">Fecha de embarque:</string>
+    <string name="str_resumen_total">Total a pagar:</string>
+    <string name="str_resumen_puntua">Puntua tu experiencia:</string>
+    <string name="str_resumen_numpersonas">Numero de personas:</string>
+
     <string-array name="valores_barcos">
         <item>Facinas Jet</item>
         <item>Tahivilla Jet</item>
@@ -45,6 +57,11 @@
     <string name="str_datos_nenes">Niños</string>
     <string name="str_datos_animales">Animales</string>
     <string name="str_datos_precio">Precio total: </string>
+    <string name="str_datos_personales">Datos personales</string>
+    <string name="str_persona">Persona</string>
+    <string name="str_nombre">Nombre:</string>
+    <string name="str_dninie">DNI/NIE:</string>
+    <string name="str_correo">Correo:</string>
 
 
 </resources>
