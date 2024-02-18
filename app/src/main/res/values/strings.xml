@@ -9,7 +9,9 @@
     <string name="str_cabeceraCompletarCompra">Completa tu compra</string>
     <string name="str_iniciarSesion">Iniciar Sesion</string>
     <string name="str_iniciandoSesion">Conectando al panel de control.</string>
+    <string name="str_pasarelaPago">Enviando información a la pasarela de pago.</string>
     <string name="str_paneldeusuario">Panel de usuario</string>
+    <string name="str_serviciospremium">Servicios premiums</string>
     <string name="str_email">Email:</string>
     <string name="str_password">Contraseña:</string>
     <string-array name="valores_barcos">
@@ -24,6 +26,12 @@
         <item>Ceuta</item>
         <item>Tanger</item>
     </string-array>
+    <string name="servPremiumCafe">Café</string>
+    <string name="servPremiumComida">Comida a bordo</string>
+    <string name="servPremiumAsiento">Asiento premium</string>
+    <string name="servZonaVIP">Zona VIP</string>
+    <string name="servTaquilla">Taquilla grande</string>
+    <string name="servPremiumPiscina">Piscina</string>
     <string name="str_noticia">La mejor forma de viajar.</string>
     <string name="str_noticia_sub">Descubre todas nuestras ofertas y precios disponibles.</string>
     <string name="str_deco_mascotas">Mascotas contigo siempre.</string>
@@ -36,7 +44,7 @@
     <string name="str_datos_acomp">Acompañantes</string>
     <string name="str_datos_nenes">Niños</string>
     <string name="str_datos_animales">Animales</string>
-    <string name="str_datos_precio">Precio: </string>
+    <string name="str_datos_precio">Precio total: </string>
 
 
 </resources>

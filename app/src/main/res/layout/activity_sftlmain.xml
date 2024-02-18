@@ -70,7 +70,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:textColor="@color/Black"
-                android:hint="@string/str_origen_hint"/>
+                android:hint="@string/str_origen_hint"
+                android:singleLine="true"/>
             <TextView
                 android:textColor="@color/Black"
                 android:layout_width="match_parent"
@@ -84,7 +85,8 @@
                 android:id="@+id/actvDestino"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:hint="@string/str_destino_hint"/>
+                android:hint="@string/str_destino_hint"
+                android:singleLine="true"/>
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.appcompat.widget.LinearLayoutCompat>
 

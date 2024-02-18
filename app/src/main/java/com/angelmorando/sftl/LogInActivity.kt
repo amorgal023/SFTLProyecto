@@ -3,17 +3,11 @@ package com.angelmorando.sftl
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.CalendarView
 import android.widget.EditText
 import android.widget.ImageButton
-import android.widget.RadioGroup
-import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.AppCompatButton
-import androidx.appcompat.widget.AppCompatRadioButton
-import androidx.appcompat.widget.SwitchCompat
 import androidx.core.widget.addTextChangedListener
-import java.time.LocalDate
 
 class LogInActivity : AppCompatActivity() {
 
@@ -40,6 +34,25 @@ class LogInActivity : AppCompatActivity() {
 
     private fun initFunctions(){
 
+        butIbBack.setOnClickListener {
+            finish()
+        }
+
+        butIniciarSesion.setOnClickListener {
+            if (iniciarSesion){
+                startActivity(Intent(this, LoadingLoginActivity::class.java))
+            } else {
+                if (etCorreo.text.toString().isBlank() && etPassword.text.toString().isBlank()) {
+                    mostrarError(Constantes.TITULO_ERROR, Constantes.MENSAJE_ERROR_AMBOS, Constantes.ACEPTAR_ERROR)
+                } else {
+                    if (etPassword.text.toString().isBlank()){
+                        mostrarError(Constantes.TITULO_ERROR, Constantes.MENSAJE_ERROR_PASSWORD, Constantes.ACEPTAR_ERROR)}
+                    else {
+                        mostrarError(Constantes.TITULO_ERROR, Constantes.MENSAJE_ERROR_CORREO, Constantes.ACEPTAR_ERROR) }
+                }
+            }
+        }
+
         etCorreo.addTextChangedListener {
             if (etCorreo.text.toString().isEmpty() || etPassword.text.toString().isEmpty()){
                 butIniciarSesion.setBackgroundColor(getColor(R.color.Black))
@@ -58,20 +71,7 @@ class LogInActivity : AppCompatActivity() {
                 iniciarSesion = true
             }
 
-        butIbBack.setOnClickListener {
-            finish()
-        }
-        butIniciarSesion.setOnClickListener {
-            if (iniciarSesion){
-                startActivity(Intent(this, LoadingLoginActivity::class.java))
-            } else {
-                if (etCorreo.text.toString().isEmpty()) {
-                    mostrarError(Constantes.TITULO_ERROR, Constantes.MENSAJE_ERROR_CORREO, Constantes.ACEPTAR_ERROR)
-                } else if (etPassword.text.toString().isEmpty()){
-                    mostrarError(Constantes.TITULO_ERROR, Constantes.MENSAJE_ERROR_PASSWORD, Constantes.ACEPTAR_ERROR)
-                }
-            }
-        }
+
         }
     }
 

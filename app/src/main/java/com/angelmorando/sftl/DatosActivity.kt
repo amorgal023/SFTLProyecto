@@ -118,7 +118,7 @@ class DatosActivity : AppCompatActivity() {
 
     private fun enviarInformacion() {
         var primeraPartePedido = PrimerPartePedido(origenEnum, destinoEnum, numPersonas, llevaCoche, llevaNenes, llevaAnimales, fechaSeleccionada)
-        val intent = Intent(this, DatosActivity::class.java)
+        val intent = Intent(this, ServiciosPremiumActivity::class.java)
         intent.putExtra("PRIMERA_PARTE_PEDIDO",primeraPartePedido)
         startActivity(intent)
     }

@@ -2,13 +2,22 @@
 <resources>
 
     <style name="Theme.SFTL"
-        parent="android:Theme.Material.Light">
+        parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:textViewStyle">@font/lexend</item>
         <item name="android:buttonStyle">@font/lexend</item>
     </style>
 
-    <style name="CalenderViewCustom" parent="Theme.AppCompat.DayNight">
+    <style name="CalenderViewCustom" parent="Theme.MaterialComponents.DayNight">
         <item name="colorAccent">@color/CyanDark</item>
         <item name="colorPrimary">@color/Cyan</item>
+    </style>
+
+    <style name="ChipsCustom" parent="Widget.MaterialComponents.Chip.Entry">
+        <item name="chipIconTint">@color/Orange</item>
+        <item name="chipBackgroundColor">@color/White</item>
+        <item name="chipStrokeWidth">2dp</item>
+        <item name="chipStrokeColor">@color/DarkOrange</item>
+        <item name="checkedIconVisible">false</item>
+        <item name="shapeAppearanceOverlay">@null</item>
     </style>
 </resources>

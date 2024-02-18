@@ -20,8 +20,10 @@
             android:layout_height="match_parent"
             android:layout_width="match_parent"
             android:layout_margin="10dp"
-            android:background="@drawable/arrowleft"
-            android:backgroundTint="@color/White"
+            android:src="@drawable/arrowleft"
+            android:padding="0dp"
+            android:scaleType="fitCenter"
+            android:backgroundTint="@color/Cyan"
             android:layout_weight="3"
             app:tint="@color/White" />
         <ImageView
