@@ -25,6 +25,8 @@
     <string name="str_resumen_total">Total a pagar:</string>
     <string name="str_resumen_puntua">Puntua tu experiencia:</string>
     <string name="str_resumen_numpersonas">Numero de personas:</string>
+    <string name="str_seekbardis">Seekbar Discreto:</string>
+    <string name="str_seekbarnor">Seekbar Normal:</string>
 
     <string-array name="valores_barcos">
         <item>Facinas Jet</item>

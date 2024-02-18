@@ -26,6 +26,7 @@ class SFTLMainActivity : AppCompatActivity() {
 
     private lateinit var llMascotas:LinearLayoutCompat
     private lateinit var llEcosostenible:LinearLayoutCompat
+    private lateinit var llBarquito:LinearLayoutCompat
 
     private lateinit var ibIniciarSesion:ImageButton
 
@@ -49,6 +50,7 @@ class SFTLMainActivity : AppCompatActivity() {
         actvDestino = findViewById<AutoCompleteTextView>(R.id.actvDestino)
         llMascotas = findViewById<LinearLayoutCompat>(R.id.llMascotas)
         llEcosostenible = findViewById<LinearLayoutCompat>(R.id.llEcosostenible)
+        llBarquito = findViewById<LinearLayoutCompat>(R.id.llBarquito)
         ibIniciarSesion = findViewById<ImageButton>(R.id.ibIniciarSesion)
 
     }
@@ -85,6 +87,10 @@ class SFTLMainActivity : AppCompatActivity() {
 
         llEcosostenible.setOnClickListener {
             val intent = Intent(this, VideoWebActivity::class.java)
+            startActivity(intent)
+        }
+        llBarquito.setOnClickListener {
+            val intent = Intent(this, ExtrasActivity::class.java)
             startActivity(intent)
         }
 
