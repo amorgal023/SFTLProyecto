@@ -22,13 +22,21 @@ class LogInActivity : AppCompatActivity() {
     private lateinit var butIniciarSesion:AppCompatButton
     private lateinit var actvBaseDeDatos:AutoCompleteTextView
 
+    private lateinit var animator: ObjectAnimator
+
+
     private var iniciarSesion = false;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_log_in)
         initButtons()
+        initVariables()
         initFunctions()
+    }
+
+    private fun initVariables() {
+        animarBoton()
     }
 
     private fun initButtons(){
@@ -65,32 +73,36 @@ class LogInActivity : AppCompatActivity() {
                 butIniciarSesion.setBackgroundColor(getColor(R.color.Black))
                 iniciarSesion = false
             } else {
-                animarBoton()
                 iniciarSesion = true
             }
+            controlarAnimacion()
         }
         etPassword.addTextChangedListener {
             if (etCorreo.text.toString().isEmpty() || etPassword.text.toString().isEmpty()){
                 butIniciarSesion.setBackgroundColor(getColor(R.color.Black))
                 iniciarSesion = false
             } else {
-                animarBoton()
                 iniciarSesion = true
             }
-
-
+            controlarAnimacion()
+        }
+    }
+    private fun controlarAnimacion(){
+        if (iniciarSesion){
+            animator.start() // Iniciar la animación
+        } else {
+            if (animator.isRunning){
+                animator.cancel()
+            }
         }
     }
 
     private fun animarBoton(){
-        var colorOrange = ContextCompat.getColor(this, R.color.Orange)
-        var colorDarkOrange = ContextCompat.getColor(this, R.color.DarkOrange)
-
-        var animator = ObjectAnimator.ofArgb(
+        animator = ObjectAnimator.ofArgb(
             butIniciarSesion,
             "backgroundColor",
-            colorOrange,
-            colorDarkOrange
+            ContextCompat.getColor(this, R.color.Orange),
+            ContextCompat.getColor(this, R.color.DarkOrange)
         )
 
         animator.duration = 1000
@@ -100,7 +112,6 @@ class LogInActivity : AppCompatActivity() {
         // Esto mete un efecto como ease in, que empieza mas lento y luego acelera.
         animator.interpolator = AccelerateInterpolator()
 
-        animator.start() // Iniciar la animación
     }
     private fun mostrarError(titulo:String, mensaje:String, positiveButton:String){
         val builder = AlertDialog.Builder(this)

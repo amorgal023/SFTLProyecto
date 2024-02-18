@@ -30,6 +30,8 @@ class SFTLMainActivity : AppCompatActivity() {
 
     private lateinit var ibIniciarSesion:ImageButton
 
+    private lateinit var animator: ObjectAnimator
+
 
     private var botonDisponible : Boolean = false
     private lateinit var origenEnum : Ciudad;
@@ -60,6 +62,7 @@ class SFTLMainActivity : AppCompatActivity() {
         adaptadorPaises = ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, ciudades_array)
         actvOrigen.setAdapter(adaptadorPaises)
         actvDestino.setAdapter(adaptadorPaises)
+        animarBoton();
     }
 
     private fun initFunctions(){
@@ -101,24 +104,30 @@ class SFTLMainActivity : AppCompatActivity() {
     }
 
     private fun animarBoton(){
-        var colorOrange = ContextCompat.getColor(this, R.color.Orange)
-        var colorDarkOrange = ContextCompat.getColor(this, R.color.DarkOrange)
 
-        var animator = ObjectAnimator.ofArgb(
+        animator = ObjectAnimator.ofArgb(
             butContinuar,
             "backgroundColor",
-            colorOrange,
-            colorDarkOrange
+            ContextCompat.getColor(this, R.color.Orange),
+            ContextCompat.getColor(this, R.color.DarkOrange)
         )
 
         animator.duration = 1000
         animator.repeatCount = ValueAnimator.INFINITE // Repetir infinitamente las veces del repeatcount
         animator.repeatMode = ValueAnimator.REVERSE // Invierte la animación en cada repetición.
 
-        // No se que hace pero tiene un nombre gracioso.
         animator.interpolator = AccelerateDecelerateInterpolator()
 
-        animator.start() // Iniciar la animación
+    }
+
+    private fun controlarAnimacion(){
+        if (botonDisponible){
+            animator.start() // Iniciar la animación
+        } else {
+            if (animator.isRunning){
+                animator.cancel()
+            }
+        }
     }
 
     private fun mostrarError(titulo:String, mensaje:String, positiveButton:String){
@@ -133,11 +142,10 @@ class SFTLMainActivity : AppCompatActivity() {
 
     private fun comprobarDisponibilidadBoton(){
         botonDisponible = comprobacionOrigenDestino();
-        if (botonDisponible){
-            animarBoton()
-        } else {
+        if (!botonDisponible){
             butContinuar.setBackgroundColor(getColor(R.color.Black))
         }
+        controlarAnimacion()
     }
 
     private fun comprobacionOrigenDestino(): Boolean {

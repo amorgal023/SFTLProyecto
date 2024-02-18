@@ -10,7 +10,7 @@
     <string name="str_cabeceraCompletarCompra">Completa tu compra</string>
     <string name="str_iniciarSesion">Iniciar Sesion</string>
     <string name="str_iniciandoSesion">Conectando al panel de control.</string>
-    <string name="str_pasabrelaPago">Enviando información a la pasarela de pago.</string>
+    <string name="str_pasarelaPagoinfo">Enviando información a la pasarela de pago.</string>
     <string name="str_paneldeusuario">Panel de usuario</string>
     <string name="str_serviciospremium">Servicios premiums</string>
     <string name="str_email">Email:</string>
